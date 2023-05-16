@@ -1,11 +1,13 @@
-from flask import Response
+from flask import Response, Flask
 from flask import request as flask_request
-# from flask_cors import CORS
 
-from bootstrap import create_app
+def create_app():
+    """Create a Flask application"""
+    app = Flask(__name__)
+    return app
 
 app = create_app()
-# CORS(app)
+
 
 @app.route('/')
 def hello():
